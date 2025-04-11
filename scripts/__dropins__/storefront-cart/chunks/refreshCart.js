@@ -86,10 +86,6 @@ query STORE_CONFIG_QUERY {
     allow_items
     allow_gift_receipt
     allow_printed_card
-    printed_card_priceV2 {
-      currency
-      value
-    }
     cart_gift_wrapping
     cart_printed_card
   }

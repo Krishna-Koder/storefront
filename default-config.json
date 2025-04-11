@@ -77,7 +77,7 @@
 		"admin": {
 			"role": {
 				"config_admin": [
-					"{ADMIN_USER_EMAIL}"
+					"krishna.mulik@deptagency.com"
 				]
 			},
 			"requireAuth": "auto"

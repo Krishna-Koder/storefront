@@ -12,10 +12,6 @@
       "allow_items": "1",
       "allow_gift_receipt": "1",
       "allow_printed_card": "1",
-      "printed_card_priceV2": {
-        "currency": "EUR",
-        "value": 355
-      },
       "cart_gift_wrapping": "0",
       "cart_printed_card": "3"
     }
