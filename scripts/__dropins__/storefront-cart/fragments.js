@@ -1,7 +1,7 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
 const e=`
-  fragment PRICE_RANGE_FRAGMENT on PriceRange {
+    fragment PRICE_RANGE_FRAGMENT on PriceRange {
     minimum_price {
       regular_price {
         value
@@ -111,7 +111,6 @@ const e=`
     uid
     quantity
     is_available
-    not_available_message
     errors {
       code
       message
@@ -152,25 +151,12 @@ const e=`
         }
         label
       }
-      original_item_price {
-        value
-        currency
-      }
-      original_row_total {
-        value
-        currency
-      }
     }
 
     product {
       name
       sku
       gift_message_available
-      gift_wrapping_available
-      gift_wrapping_price {
-        currency
-        value
-      }
       thumbnail {
         url
         label
@@ -203,29 +189,11 @@ const e=`
       }
     }
     ... on SimpleCartItem {
-      available_gift_wrapping {
-        ...AVAILABLE_GIFT_WRAPPING_FRAGMENT
-      }
-      gift_message {
-        ...GIFT_MESSAGE_FRAGMENT
-      }
-      gift_wrapping {
-        ...GIFT_WRAPPING_FRAGMENT
-      }
       customizable_options {
         ...CUSTOMIZABLE_OPTIONS_FRAGMENT
       }
     }
     ... on ConfigurableCartItem {
-      available_gift_wrapping {
-        ...AVAILABLE_GIFT_WRAPPING_FRAGMENT
-      }
-      gift_message {
-        ...GIFT_MESSAGE_FRAGMENT
-      }
-      gift_wrapping {
-        ...GIFT_WRAPPING_FRAGMENT
-      }
       configurable_options {
         configurable_product_option_uid
         option_label
@@ -250,15 +218,6 @@ const e=`
     }
     ...DOWNLOADABLE_CART_ITEMS_FRAGMENT
     ... on BundleCartItem {
-      available_gift_wrapping {
-        ...AVAILABLE_GIFT_WRAPPING_FRAGMENT
-      }
-      gift_message {
-        ...GIFT_MESSAGE_FRAGMENT
-      }
-      gift_wrapping {
-        ...GIFT_WRAPPING_FRAGMENT
-      }
       bundle_options {
         uid
         label
@@ -293,27 +252,11 @@ const e=`
     id
     total_quantity
     is_virtual
-    applied_gift_cards {
-      ...APPLIED_GIFT_CARDS_FRAGMENT
-    }
     gift_receipt_included
     printed_card_included
-    gift_message {
-      ...GIFT_MESSAGE_FRAGMENT
-    }
-    gift_wrapping {
-      ...GIFT_WRAPPING_FRAGMENT
-    }
-    available_gift_wrappings {
-      ...AVAILABLE_GIFT_WRAPPING_FRAGMENT
-    }
     prices {
       gift_options {
         gift_wrapping_for_items {
-          currency
-          value
-        }
-        gift_wrapping_for_items_incl_tax {
           currency
           value
         }
@@ -321,15 +264,7 @@ const e=`
           currency
           value
         }
-        gift_wrapping_for_order_incl_tax {
-          currency
-          value
-        }
         printed_card {
-          currency
-          value
-        }
-        printed_card_incl_tax {
           currency
           value
         }
@@ -347,10 +282,6 @@ const e=`
         value
       }
       grand_total {
-        currency
-        value
-      }
-      grand_total_excluding_tax {
         currency
         value
       }
@@ -398,4 +329,8 @@ const e=`
 
   ${l}
   ${t}
-`;export{t as APPLIED_GIFT_CARDS_FRAGMENT,n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,c as CART_FRAGMENT,l as CART_ITEM_FRAGMENT,a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,r as GIFT_MESSAGE_FRAGMENT,i as GIFT_WRAPPING_FRAGMENT};
+`;
+
+const omit = '';
+// export{t as APPLIED_GIFT_CARDS_FRAGMENT,n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,c as CART_FRAGMENT,l as CART_ITEM_FRAGMENT,a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,r as GIFT_MESSAGE_FRAGMENT,i as GIFT_WRAPPING_FRAGMENT};
+export{omit as APPLIED_GIFT_CARDS_FRAGMENT,omit as AVAILABLE_GIFT_WRAPPING_FRAGMENT,c as CART_FRAGMENT,l as CART_ITEM_FRAGMENT,a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,omit as GIFT_MESSAGE_FRAGMENT,omit as GIFT_WRAPPING_FRAGMENT};
